@@ -1,7 +1,19 @@
 package com.appsdeveloperblog.app.ws.ui.model.response;
 
+
+
 public class UserRest {
-    private String firstName, lastName, email, userId;
+
+
+    private String firstName;
+
+    private String lastName;
+
+
+    private String email;
+
+    private String userId;
+
 
     public String getFirstName() {
         return firstName;
