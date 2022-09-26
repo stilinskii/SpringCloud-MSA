@@ -42,8 +42,8 @@ public class WebSecurity {
         return http.build();
     }
 
-    private AuthenticationFilter getAuthenticationFilter(AuthenticationManager authenticationManager) {
-        AuthenticationFilter authenticationFilter = new AuthenticationFilter();
+    private AuthenticationFilter getAuthenticationFilter(AuthenticationManager authenticationManager) throws Exception {
+        AuthenticationFilter authenticationFilter = new AuthenticationFilter(authenticationManager(),usersService,environment);
         authenticationFilter.setAuthenticationManager(authenticationManager);
 
         return authenticationFilter;
