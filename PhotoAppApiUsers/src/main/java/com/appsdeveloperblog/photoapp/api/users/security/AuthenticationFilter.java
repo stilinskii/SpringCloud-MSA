@@ -67,7 +67,7 @@ public class AuthenticationFilter extends UsernamePasswordAuthenticationFilter {
         String token = Jwts.builder()
                 .setSubject(userDetails.getUserId())
                 .setExpiration(new Date(System.currentTimeMillis()+Long.parseLong(environment.getProperty("token.expiration_time"))))
-                .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret"))
+                .signWith(SignatureAlgorithm.HS512, environment.getProperty("token.secret")) // secret key 는 왜 필요한거지
                 .compact();
 
         response.addHeader("token", token);
